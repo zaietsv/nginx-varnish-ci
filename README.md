@@ -1,6 +1,8 @@
 # nginx-varnish-ci
 ## Preconditions
 A simple Docker configuration of a web-server Nginx interacting with Varnish cache.
+A Varnish container exposes a port "80" outside and listens incoming connections (from a browser). 
+A Nginx container contains only an internal port "80" to listen Varnish connections.
 
 ## server URLs
 
@@ -70,7 +72,7 @@ Enter a container www-data:
 Perform following curl-requests:
 
     curl -i varnish.nginx-varnish.ci
-    curl -i varnish.nginx-varnish.ci
+    curl -i www-data.nginx-varnish.ci
 
 Note that headers received from the both networks are different:
 ![img_7.png](img_7.png)
